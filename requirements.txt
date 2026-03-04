@@ -1,0 +1,8 @@
+open3d
+plyfile
+opencv-python
+lpips
+trimesh
+xatlas
+imageio
+scikit-image
