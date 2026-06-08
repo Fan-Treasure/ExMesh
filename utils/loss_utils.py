@@ -139,7 +139,6 @@ def double_vertex_deviation_loss(vertices, vertices_ref, faces):
     # vertices_ref: (N, 3) initial/reference vertices
     # faces: (M, 3)
     delta = vertices - vertices_ref  # (N, 3)
-    # 构建所有边索引
     edges = torch.cat([faces[:, [0,1]], faces[:, [1,2]], faces[:, [2,0]]], dim=0)  # (3*M, 2)
     diff = delta[edges[:,0]] - delta[edges[:,1]]  # (E, 3)
     loss = (diff ** 2).sum(-1).mean()

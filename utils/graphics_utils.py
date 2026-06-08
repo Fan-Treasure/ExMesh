@@ -104,7 +104,7 @@ def extract_uv_map(mesh: BasicMesh):
     faces = mesh.faces.astype(np.uint32)
     vmapping, indices, uvs = xatlas.parametrize(vertices, faces)
     uvs = np.asarray(uvs, dtype=np.float32)
-    vmapping = np.asarray(vmapping)  # uvs对应的mesh顶点索引
+    vmapping = np.asarray(vmapping) 
 
     # Normalize to [0,1]
     uvs_min = np.min(uvs, axis=0, keepdims=True)

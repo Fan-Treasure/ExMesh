@@ -57,11 +57,6 @@ CAMERA_MODEL_NAMES = dict([(camera_model.model_name, camera_model)
 
 
 def qvec2rotmat(qvec):
-    """
-    将四元数（qvec）转换为旋转矩阵。
-    :param qvec: 四元数，长度为4的数组
-    :return: 3x3旋转矩阵
-    """
     return np.array([
         [1 - 2 * qvec[2]**2 - 2 * qvec[3]**2,
          2 * qvec[1] * qvec[2] - 2 * qvec[0] * qvec[3],
@@ -75,11 +70,6 @@ def qvec2rotmat(qvec):
 
 
 def rotmat2qvec(R):
-    """
-    将旋转矩阵转换为四元数。
-    :param R: 3x3旋转矩阵
-    :return: 长度为4的四元数
-    """
     Rxx, Ryx, Rzx, Rxy, Ryy, Rzy, Rxz, Ryz, Rzz = R.flat
     K = np.array([
         [Rxx - Ryy - Rzz, 0, 0, 0],
@@ -95,9 +85,6 @@ def rotmat2qvec(R):
 
 class Image(BaseImage):
     def qvec2rotmat(self):
-        """
-        返回当前图像的旋转矩阵
-        """
         return qvec2rotmat(self.qvec)
 
 

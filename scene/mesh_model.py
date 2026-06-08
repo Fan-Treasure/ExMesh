@@ -314,7 +314,6 @@ class MeshModel:
                         (torch.norm(p0 - p2).item(), (v2, v0), (cos_list[2], cos_list[0]))]
                 edges.sort(key=lambda x: x[0])
                 min_len, (va, vb), (cos_a, cos_b) = edges[0]
-                # 角度小的点（锐角点）为B
                 B = vb if cos_a < cos_b else va
                 merge_type = "obtuse"
                 perim = (edges[0][0] + edges[1][0] + edges[2][0])
@@ -457,7 +456,7 @@ class MeshModel:
                 d = torch.tensor([p[0] for p in applied_pairs], device=device, dtype=torch.long)
                 k = torch.tensor([p[1] for p in applied_pairs], device=device, dtype=torch.long)
                 redirect[d] = k
-                self._vmapping = redirect[self._vmapping]  # 先做旧索引层面的重定向
+                self._vmapping = redirect[self._vmapping]
 
         # Remove unused vertices and remap indices
         used_v = torch.unique(self._faces.flatten())
@@ -1039,12 +1038,11 @@ class MeshModel:
             new_uv_faces.append([u_mid1, uD1, uB1])
 
         if len(new_vertices) == 0:
-            # 没有可分裂的面
+            # no face to split
             return (torch.empty(0,3,device=self._vertices.device),
                 torch.empty(0,dtype=torch.long,device=self._vertices.device),
                 torch.empty(0,3,dtype=torch.long,device=self._vertices.device),
                 torch.empty(0,3,device=self._vertices.device),
-                # 新增返回：UV
                 torch.empty(0,2,device=self._vertices.device),
                 torch.empty(0,3,dtype=torch.long,device=self._vertices.device),
                 torch.empty(0,dtype=torch.long,device=self._vertices.device))
@@ -1053,7 +1051,7 @@ class MeshModel:
         new_faces_tensor = torch.tensor(new_faces, dtype=torch.long, device=self._vertices.device)
         new_vertices_color_tensor = torch.stack(new_vertices_color)
         del_face_indices = torch.tensor(list(del_face_indices), dtype=torch.long, device=self._vertices.device)
-        # 新增：打包 UV 增量
+        #  UV attributes for new vertices and faces
         new_uvs_tensor = torch.stack(new_uvs) if len(new_uvs) > 0 else torch.empty(0,2,device=self._vertices.device)
         new_uv_faces_tensor = torch.tensor(new_uv_faces, dtype=torch.long, device=self._vertices.device) if len(new_uv_faces) > 0 else torch.empty(0,3,dtype=torch.long,device=self._vertices.device)
         new_uv_vmapping_tensor = torch.tensor(new_uv_vmapping, dtype=torch.long, device=self._vertices.device) if len(new_uv_vmapping) > 0 else torch.empty(0,dtype=torch.long,device=self._vertices.device)
