@@ -162,10 +162,11 @@ This project is built upon [2DGS](https://surfsplatting.github.io/) and [PGSR](h
 If you find this code useful for your research, please use the following BibTeX entry:
 
 ```bibtex
-@inproceedings{ExMesh2026,
+@inproceedings{Fan2026ExMesh,
   title={ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation},
-  author={Chuanjin Fan and others},
+  author={Chuanjin Fan and Lifan Wu and Wenjie Chang and Hanzhi Chang and Wenfei Yang and Tianzhu Zhang},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2026}
+  year={2026},
+  url={https://fan-treasure.github.io/ExMesh_page.github.io/}
 }
 ```

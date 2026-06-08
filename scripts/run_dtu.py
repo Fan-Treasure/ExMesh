@@ -1,8 +1,7 @@
 import os
 
 scene_ids = [24, 37, 40, 55, 63, 65, 69, 83, 97, 105, 106, 110, 114, 118, 122]
-scene_ids = [105]
-gpu_id = 2  # Set this to the GPU you want to use
+gpu_id = 3  # Set this to the GPU you want to use
 data_base_path='workdir/DTU'
 
 scene_params = {  # These parameters are provided for reproducibility, but they can be further optimized for better results.
@@ -26,7 +25,7 @@ scene_params = {  # These parameters are provided for reproducibility, but they 
 for sid in scene_ids:
     params = scene_params[sid] 
     scan_dir = f"workdir/DTU/scan{sid}"
-    model_dir = f"outputs/optimized_meshes_10000/dtu_scan{sid}"
+    model_dir = f"outputs/optimized_meshes/dtu_scan{sid}"
     
     cmd = f"CUDA_VISIBLE_DEVICES={gpu_id} python train.py -s {scan_dir} -m {model_dir} " + \
           f"--lambda_smooth {params['lambda_smooth']} --lambda_depth {params['lambda_depth']}"
