@@ -8,7 +8,7 @@ University of Science and Technology of China
 
 <div align="center">
   <a href="https://arxiv.org/abs/2606.07288">
-    <img src="https://img.shields.io/badge/arXiv-2602.20157-b31b1b" alt="arXiv">
+    <img src="https://img.shields.io/badge/arXiv-2606.07288-b31b1b" alt="arXiv">
   </a>
   <a href="https://fan-treasure.github.io/ExMesh_page.github.io/">
     <img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page">
