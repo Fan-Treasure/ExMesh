@@ -163,7 +163,7 @@ If you find this code useful for your research, please use the following BibTeX 
 
 ```bibtex
 @inproceedings{Fan2026ExMesh,
-  title={ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation},
+  title={ExMesh: Explicit Mesh Reconstruction with Topology Adaptation},
   author={Chuanjin Fan and Lifan Wu and Wenjie Chang and Hanzhi Chang and Wenfei Yang and Tianzhu Zhang},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2026},
