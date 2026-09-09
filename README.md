@@ -1,6 +1,6 @@
 <div align="center">
 
-# ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation
+# ExMesh: Explicit Mesh Reconstruction with Topology Adaptation
 
 **CVPR 2026**   
 Chuanjin Fan, Lifan Wu, Wenjie Chang, Hanzhi Chang, Wenfei Yang, and Tianzhu Zhang  
@@ -21,7 +21,7 @@ University of Science and Technology of China
 
 </div>
 
-This repository contains the official implementation for the paper **"ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation"**.
+This repository contains the official implementation for the paper **"ExMesh: Explicit Mesh Reconstruction with Topology Adaptation"**.
 
 ## 📦 Installation
 
