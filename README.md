@@ -133,7 +133,7 @@ Evaluate the reconstructed mesh quality using standard metrics.
 #### Single Scene Evaluation
 ```bash
 python scripts/eval_dtu/evaluate_single_scene.py \
-    --input_mesh outputs/DTU/scan24/mesh/auto_mesh_iter_8000.ply \
+    --input_mesh outputs/DTU/scan24/mesh/auto_mesh_iter_10000.ply \
     --scan_id 24 \
     --output_dir outputs/DTU/scan24/eval \
     --mask_dir workdir/DTU \
